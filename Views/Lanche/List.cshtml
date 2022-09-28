@@ -1,0 +1,20 @@
+﻿@model LancheListViewModel
+
+<div>
+    <h2> @Model.CategoriaAtual </h2>
+    <p>Atualizado em: @ViewData["Hora"]</p>
+</div>
+
+<div class="container">
+    <div class="row">
+
+        @foreach(var lanche in Model.Lanches){
+            <partial name="_LanchesResumo" for="@lanche"/>
+        }
+
+    </div>
+</div>
+
+<div>
+    <h3>Total de lanches: @ViewBag.TotalLanches</h3>
+</div>
